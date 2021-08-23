@@ -1,0 +1,21 @@
+<h1>The Results</h1>
+<div>
+    <div class="row"
+        *ngFor="let subresults of resultsForPage">
+        <div class="column"
+            *ngFor="let result of subresults"
+            (click)="onSelect(result)">
+            <img src="{{result['Poster']}}" alt="{{result['Title']}}">
+            <h3>{{result['Title']}}</h3>
+        </div>
+    </div>
+</div>
+<!-- <ul *ngIf="results != null">
+    <li *ngFor="let result of results"><img src="{{result['Poster']}}"></li>
+</ul> -->
+
+<div id="pages">
+    <material-button raised *ngIf="page != 1" (click)="previousPage()">PREVIOUS</material-button>
+    <h3>{{ page }}/{{ numberOfPages }}</h3>
+    <material-button raised *ngIf="page != numberOfPages" (click)="nextPage()">NEXT</material-button>
+</div>

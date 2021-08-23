@@ -1,0 +1,26 @@
+<div *ngIf="movie != null && movieInWatchlist != null">
+    <h2>{{movie.title}} ({{movie.year}})</h2>
+    <h5>{{movie.runtime}} | {{movie.genre}} | {{movie.release}}</h5>
+    <div class="container">
+        <div class="textWithBlurredBg">
+            <img [src]="movie.poster">
+            <material-button raised
+                            *ngIf="!movieInWatchlist"
+                            (click)="onAddMovie()">
+                            ADD TO WATCHLIST
+            </material-button>
+            <material-button raised
+                            *ngIf="movieInWatchlist"
+                            (click)="onRemoveMovie()">
+                            REMOVE FROM WATCHLIST
+            </material-button>
+        </div>
+        <div class="description">
+            <div>{{movie.plot}}</div>
+            <div><label>Director: </label>{{movie.director}}</div>
+            <div><label>Actors: </label>{{movie.actors}}</div>
+            <div><label>Awards: </label>{{movie.awards}}</div>
+            <div id="rating"><material-icon icon="star"></material-icon>{{movie.rating}}/10</div>
+        </div>
+    </div>
+</div>

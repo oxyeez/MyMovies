@@ -1,0 +1,25 @@
+<div>
+  <material-input label="What movie are you looking for?"
+                  autoFocus floatingLabel style="width:80%"
+                  (keyup)="onKey($event)"
+                  (keyup.enter)="onResearch($event.target.value)"
+                  (blur)="research=$event.target.value">
+  </material-input>
+
+  <material-fab mini raised (click)="onResearch(research)">
+    <material-icon icon="search"></material-icon>
+  </material-fab>
+</div>
+<!-- <div>
+  <material-button raised (click)="toggleFilters()">FILTERS</material-button>
+  <div *ngIf="filter" class='filterOn'>
+    <p>WorkInProgress</p>
+  </div>
+</div> -->
+
+<ul *ngFor="let result of results">
+  <li [class.selected]="result === selected"
+      (click)="onSelect(result)"> 
+      {{ result["Title"] }} ({{ result["Year"] }})
+  </li>
+</ul>

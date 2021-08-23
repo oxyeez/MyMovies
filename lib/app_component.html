@@ -1,0 +1,6 @@
+<!-- <h1>My Movies</h1> -->
+<nav>
+    <a [routerLink]="RoutePaths.watchlist.toUrl()"><material-button raised>WATCHLIST</material-button></a>
+    <a [routerLink]="RoutePaths.movieSearch.toUrl()"><material-button raised>RESEARCH</material-button></a>
+</nav>
+<router-outlet [routes]="Routes.all"></router-outlet>

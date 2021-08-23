@@ -1,0 +1,25 @@
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+li {
+    line-height: 3em;
+    text-indent: 0.8em;
+}
+
+li:hover {
+    background-color: #EEEEEE;
+    cursor: pointer;
+    margin-left: 0.1em;
+}
+
+li material-fab {
+    float: left;
+    vertical-align: middle;
+}
+
+.done {
+    text-decoration: line-through;
+}
+  

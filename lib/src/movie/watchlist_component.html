@@ -1,0 +1,7 @@
+<h1>My Watchlist</h1>
+
+<ul *ngFor="let map of watchlist">
+    <li (click)="onSelect(map)"> 
+        {{ map["title"] }}
+    </li>
+  </ul>
