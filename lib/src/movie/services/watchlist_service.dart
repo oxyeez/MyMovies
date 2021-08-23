@@ -44,7 +44,7 @@ class WatchlistService {
   Future<void> deleteMovie(String imdbID) async {
     var id = getApiId(imdbID);
     final url =
-        'https://watchlist-f1898-default-rtdb.europe-west1.firebasedatabase.app/watchlist/$id.json';
+        '$apiUrl/watchlist/$id.json';
 
     try {
       await http.delete(url).then((response) {
