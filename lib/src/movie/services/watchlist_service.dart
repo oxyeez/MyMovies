@@ -14,7 +14,7 @@ class WatchlistService {
   // ignore: missing_return
   Future<List<dynamic>> getAllMovies() async {
     try {
-      final response = await http.get(apiUrl + '/watchlist.json');
+      final response = await http.get('$apiUrl/watchlist.json');
       final extractedData = json.decode(response.body) as Map<String, dynamic>;
 
       if (extractedData != null) {
